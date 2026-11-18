@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Секретная страница</title>
+
+<style>
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    margin: 8px;
+}
+
+button {
+    background: #00b894;
+    color: white;
+    cursor: pointer;
+}
+
+#error {
+    color: #ff4444;
+}
+
+#secret {
+    display: none;
+    font-size: 36px;
+    margin-top: 40px;
+    color: #00ff99;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+    <h1>🔐 Введи пароль</h1>
+
+    <input type="password" id="password" placeholder="Пароль">
+
+    <br>
+
+    <button onclick="checkPassword()">Войти</button>
+
+    <p id="error"></p>
+</div>
+
+<div id="secret">
+    -... .- -. -.-.
+</div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "162481") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("secret").style.display = "block";
+    } else {
+        document.getElementById("error").textContent =
+            "Неверный пароль, попробуй ещё раз";
+    }
+}
+</script>
+
+</body>
+</html>
